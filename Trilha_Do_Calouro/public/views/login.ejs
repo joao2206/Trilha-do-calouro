@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <title>Trilha do calouro</title>
+</head>
+
+<body>
+  <div class="main-login">
+    <div class="login-esq">
+      <div class="card-titulo">
+        <img src="../images/TRILHA DO CALOURO.svg" class="esq-login-img" alt="estudante" />
+        <h1>Bem-vindo, <br />calouro!<br /></h1>
+        <p>Ainda não possui cadastro? <br />faça sua conta agora mesmo!</p>
+        <button class="bnt-link-cadastrar" onclick="window.location.href='/'">
+          Criar conta
+        </button>
+        <a href="#" class="esqueci_senha">Esqueci minha senha.</a>
+      </div>
+    </div>
+    <div class="login-dir">
+      <div class="card-login">
+        <h1>LOGIN</h1>
+        <form method="POST" action="/log">
+          <div class="textfield">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="usuario@email.com" />
+          </div>
+          <div class="textfield">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" />
+          </div>
+          <button class="btn-login" onclick="logar()">Login</button>
+          <!-- codigo em ejs para as mensagens de erro -->
+          <% if (message.length> 0) { %>
+            <div class="text-center">
+              <label id="message">
+                <%= message %>
+              </label>
+            </div>
+            <%}%>
+        </form>
+        <div class="linksMobile">
+          <a href="#">Esqueci minha senha.</a>
+          <p>Não possui conta?</p>
+          <a href="/">Cadastra-se agora mesmo!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <title>Trilha do calouro</title>
+</head>
+
+<body>
+  <div class="main-login">
+    <div class="login-esq">
+      <div class="card-titulo">
+        <img src="../images/TRILHA DO CALOURO.svg" class="esq-login-img" alt="estudante" />
+        <h1>Bem-vindo, <br />calouro!<br /></h1>
+        <p>Acesse sua conta agora</br> mesmo:</p>
+        <button class="bnt-link-login" onclick="window.location.href='views/login'">
+          ENTRAR
+        </button>
+        <a href="#" class="esqueci_senha">Esqueci minha senha.</a>
+      </div>
+    </div>
+    <div class="login-dir">
+      <div class="card-cadastro">
+        <h1>Crie sua conta</h1>
+        <p>Preencha seus dados:</p>
+        <form  method="POST" action="/register">
+          <div class="textfield">
+            <label for="matricula">Matricula</label>
+            <input type="text" id="matricula" name="matricula" required />
+          </div>
+          <div class="textfield">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required />
+          </div>
+          <div class="textfield">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="usuario@email.com" required />
+          </div>
+          <div class="textfield">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required />
+          </div>
+          <button type="submit" class="bnt-cadastrar">Cadastrar</button>
+          <!-- codigo em ejs para as mensagens de erro -->
+          <% if (message.length> 0) { %>
+            <div class="text-center">
+              <% if (message=="ok" ) { %>
+                <label id="message">Usuário cadastrado!</label>
+
+                <% }else{ %>
+                  <label id="message">
+                    <%= message %>
+                  </label>
+                  <% } %>
+
+            </div>
+            <%}%>
+        </form>
+        <div class="linksMobile">
+          <a href="#">Esqueci minha senha.</a>
+          <p>Já possui conta?</p>
+          <a href="views/login">Acesse sua conta agora mesmo!</a>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+/*Tela Inicial*/
+header {
+  background: linear-gradient(to right, #195128, #3b9145, #195128);
+  color: #fff;
+  padding: 20px;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container > p {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.principal{
+  display: flex; 
+}
+
+.imagem {
+  margin-left: 100px;  
+  max-width: 300px;
+  max-height: 150px;
+}
+
+.menu {
+  width: 20%;
+  float: left;    
+  margin-left: 60px;    
+}
+.menu > ul > li> a{
+ font-size: 14px;
+}
+
+.accordion-header{
+  font-size: 14px;
+}
+
+.accordion-content a{
+  font-size: 13px;
+}
+
+#menu-lateral {
+  list-style: none;
+  width: 100%;
+  height: 50%;
+  line-height: 200%;
+  /*background-color: #f1f1f1;*/
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+ 
+
+.accordion-header {
+  margin-left: 5px;
+  color: #195128;  
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  margin-left: -20px;
+}
+
+
+a {
+  padding: 5px;
+  text-decoration: none;
+  color: #195128;
+}
+a:hover {
+  color: #30eb4f;
+  cursor: pointer;
+}
+
+main {  
+  width: 70%;
+  max-width: 800px;
+  /*margin: 0 auto;*/
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+}
+footer {
+  background: linear-gradient(to right, #195128, #3b9145, #195128);
+  color: #fff;
+  padding: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Tela de Cadastro */
+.card-cadastro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #d9d9d9;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.card-cadastro > h1 {
+  color: #339938;
+  font-weight: 900;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-cadastro > p {
+  color: #a7a5a5;
+  font-weight: 800;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.bnt-link-login {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  outline: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #1b5e20;
+  cursor: pointer;
+}
+
+.bnt-cadastrar {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 0px 25px 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #1b5e20;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #00000056;
+}
+
+.esqueci_senha {
+  color: #ffffff;
+  
+}
+
+/*Tela login Felipe*/
+.main-login {
+  width: 100vw;
+  height: 100vh;
+  /*background: linear-gradient(to bottom, #D1CCCC, #2F7F33);
+  background: #d1cccc;*/
+  background: url("../images/fundo-login.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-esq {
+  width: 30vw;
+  height: 70vh;
+  display: flex;
+}
+
+.card-titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #2f7f33;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.card-titulo > h1 {
+  font-size: 3vw;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-titulo > p {
+  white-space: nowrap;
+  font-size: 1.3vw;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-titulo > a {
+  font-size: 1.2vw;
+  font-family: "Poppins", sans-serif;
+}
+
+.esq-login-img {
+  width: 15vw;
+}
+
+.login-dir {
+  width: 30vw;
+  height: 70vh;
+  display: flex;
+  float: right;
+}
+
+.card-login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #d9d9d9;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.card-login > h1 {
+  color: #339938;
+  font-weight: 800;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.textfield {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+.textfield > input {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  background: #d1cccc;
+  color: #2f7f33;
+  font-size: 12pt;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textfield > label {
+  color: #a7a5a5;
+  margin-bottom: 10px;
+  font-size: 1.3vw;
+}
+
+.textfield > input::placeholder {
+  color: #a7a5a5;
+}
+
+.btn-login {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #1b5e20;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px #00000056;
+}
+
+.bnt-link-cadastrar {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  outline: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffffff;
+  background: #1b5e20;
+  cursor: pointer;
+}
+.text-center {
+  width: 100%;
+  text-align: center; 
+}
+
+#message {
+  font-weight: bold;
+  color: #1b5e20;  
+  margin: auto;
+  align-items: center;  
+}
+
+
+.linksMobile {
+  display: none;
+}
+
+/* Estilos para textos em perguntas e respostas no fórum */
+
+.container_forum {
+  background: #d9d9d9;
+  padding: 30px 35px;
+  border-radius: 0px 20px 20px 0px;
+  width: 80%;
+  margin-top: 30px;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.question h3 {
+  font-size: 17px;
+  color: #195128;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  font-size: 14px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.answers-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.answers-list li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.question form {
+  margin-top: 13px;
+}
+
+.question textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #195128;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.question button {
+  background-color: #195128;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 950px) {
+  .card-login {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-login {
+    flex-direction: column;
+  }
+
+  .card-titulo > h1 {
+    font-size: 4vw;
+  }
+
+  .card-titulo > p {
+    display: none;
+  }
+
+  .card-titulo > a {
+    display: none;
+  }
+
+  .bnt-link-cadastrar,
+  .bnt-link-login {
+    display: none;
+    
+  }
+
+  .bnt-cadastrar,.btn-login {
+    width: 80%;
+  }
+
+  .login-esq,
+  .login-dir {
+    width: 100%;
+    height: auto;
+  }
+
+  .esq-login-img {
+    width: 40vw;
+  }
+
+  .card-login,
+  .card-cadastro {
+    width: 90%;
+    margin: auto;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .textfield > label {
+    font-size: 5vw;
+  }
+
+  .card-titulo {
+    width: 90%;
+    margin: auto;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .linksMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0%;
+  }
+
+  .linksMobile p {
+    color: #1b5e20;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .linksMobile a {
+    color: #1b5e20;
+    font-weight: 800;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .principal {
+    flex-direction: column;
+  }
+
+  .imagem {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .menu {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .accordion-header {
+    font-size: 12px;
+  }
+
+  .accordion-content a {
+    font-size: 11px;
+  }
+
+  main {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .container_forum {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .question textarea {
+    width: 100%;
+  }
+
+  .question button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,106 @@
+<!-- public/views/forum.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Forum</title>
+</head>
+<header>
+    <div class="container">
+        <a href="/views/home">
+            <img src="/images/logobranca.png" alt="logo-ifb" class="imagem" />
+        </a>
+    </div>
+</header>
+    <div class="principal">
+        <nav class="menu">
+        <ul id="menu-lateral">
+          <li><a href="#">Fórum |</a></li>
+          <li><a href="https://www.figma.com/file/M835I1tcJ57aGK3nllTCBK/Mapa-do-polo?type=whiteboard&node-id=0-1&t=pnLxSKyuU4SqqEP2-0" target="_blank">Mapa do IFB |</a></li>
+          <li class="accordion-item">
+            <div class="accordion-header">Orientações Sobre Portais |</div>
+            <div class="accordion-content">
+              <ul>
+              <li><a href="https://nead.ifb.edu.br/mod/book/view.php?id=144326" target="_blank">NEAD</a></li>
+              <li><a>Portal do estudante</a></li>
+              <li><a href="https://www.ifb.edu.br/" target="_blank">Portal IFB</a></li>
+              <li><a href="https://drive.google.com/file/d/1wUnnJ-q8t1ArWaT9nev5VTT8IQAcdAjL/view?pli=1" target="_blank">Biblioteca</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="">Relatórios Dos Alunos |</a></li>
+        </ul>  
+      </nav>
+
+        <div class="container_forum">
+            <h1>Fórum</h1>
+        
+            <!-- Formulário para enviar uma nova pergunta -->
+            <form method="POST" action="/forum/posts">
+                <label for="question">Faça uma pergunta:</label>
+                <textarea name="question" class="form-control" rows="4" required></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Enviar Pergunta</button>
+            </form>
+            
+            <!-- Nova pergunta -->
+            <% let displayedQuestions = []; %>
+            <% posts.forEach(post => { %>
+                <% if (!displayedQuestions.includes(post.postId)) { %>
+                    <div class="question">
+                        <h3><%= post.questionUserName %> perguntou:</h3>
+                        <p class="question-text"><%= post.question %></p>                   
+                        
+                        <!-- Lista de respostas -->
+                        <ul class="answers-list">
+                            <% const answersForQuestion = posts.filter(answer => answer.postId === post.postId); %>
+                            <% answersForQuestion.forEach(answer => { %>
+                                <li><strong><%= answer.answerUserName %>:</strong> <%= answer.answer %></li>
+                            <% }) %>
+                        </ul>
+
+                        <!-- Formulário para responder à pergunta -->
+                        <form method="POST" action="/forum/answer">
+                            <input type="hidden" name="questionId" value="<%= post.postId %>">
+                            <label for="answer">Sua Resposta:</label>
+                            <textarea name="answer" class="form-control" rows="3" required></textarea>
+                            <button type="submit" class="btn btn-primary">Responder</button>
+                        </form>
+
+                        <hr>
+                    </div>
+                    <% displayedQuestions.push(post.postId); %>
+                <% } %>
+            <% }) %>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Informações Adicionais</p>
+        <a href="/logout">Sair</a>
+    </footer>
+</body>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function () {
+          const accordionItem = this.parentNode;
+          const accordionContent = accordionItem.querySelector('.accordion-content');
+    
+          if (accordionContent.style.display === 'block') {
+            accordionContent.style.display = 'none';
+          } else {
+            accordionContent.style.display = 'block';
+          }
+        });
+      });
+    });
+    
+      </script>
+</html>
